@@ -1,0 +1,31 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  #    defer-datasource-initialization: true # 하이버네이트 초기화 전 쿼리 실행
+
+  # HS512 암호화 알고리즘 -> SecretKey는 64 byte 이상.
+  # 특정 문자열을 base64로 인코딩한 값을 사용.
+  jwt:
+    access-secret-key: ZEtBQ2w3VnVWR1VVSVFzcGlWbGkK
+    refresh-secret-key: bVlweDhROVdIYkttNTl6V3hoMUgK
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher # antMatcher ->requestMatchers
+
+#logging:
+#  level:
+#    root: trace
+
+
